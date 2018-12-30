@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.5.21"
     },
     "dependencies": {
+        "flag-icon-css": "^3.2.1",
         "materialize-css": "^1.0.0-rc.2"
     }
 }

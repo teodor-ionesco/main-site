@@ -39,14 +39,27 @@
 	</div>
 @endsection
 @section('js')
-	$('._deleleme').each(function(id, elem) {
-		$(elem).click(function(el) {
+// <script type="text/javascript">
+
+	/* Autoload stuff */
+	$(document).ready(function(){
+
+	});
+
+	/* Delete input email element */
+	$('._deleleme').each(function(id, elem) 
+	{
+		$(elem).click(function(el) 
+		{
 			$(el).parent().remove();
 		});
 	});
 
-	$('._addeleme').each(function(id, elem) {
-		$(elem).click(function(el){
+	/* Add input email element */
+	$('._addeleme').each(function(id, elem) 
+	{
+		$(elem).click(function(el)
+		{
 			var last = $('._e').last().attr('_e');
 			var data = '<div class="_e" _e="'+ parseInt(last+1) +'"> \
 							<input required="" type="email" name="email['+ parseInt(last+1) +']" placeholder="E-mail address" class="inline"> \
@@ -55,4 +68,5 @@
 			$(el).before(data);
 		});
 	});
+// </script>	
 @endsection

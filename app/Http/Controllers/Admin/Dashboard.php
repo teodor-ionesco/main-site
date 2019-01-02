@@ -7,6 +7,13 @@ use App\Http\Controllers\Controller;
 
 class Dashboard extends Controller
 {
+	/* 
+	*	Index function
+	*/
     public function index()
-    {}
+    {
+    	return view('admin.dashboard', [
+
+    	]);
+    }
 }

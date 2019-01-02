@@ -13,9 +13,10 @@ class Settings extends Migration
      */
     public function up()
     {
-        Schema::create(Blueprint $table, function() {
+        Schema::create('settings', function(Blueprint $table) {
             $table -> string('variable');
             $table -> string('value');
+            $table -> timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class Settings extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('settings');
     }
 }

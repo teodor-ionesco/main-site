@@ -9,7 +9,7 @@ Route::get('/', function () {
 /*
 ***** Admin area
 */
-Route::get('/a/login', 'Auth\LoginController@index') -> name('login');
+Route::get('/a/login', 'Auth\LoginController@showLoginForm') -> name('login');
 Route::post('/a/login', 'Auth\LoginController@login');
 
 Route::prefix('/admin') -> middleware('auth') -> group(function()

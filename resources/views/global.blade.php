@@ -2,10 +2,10 @@
 <html lang="EN">
 <head>
 	<title>@yield('title')</title>
-	<link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
-	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
 	<style type="text/css">
 		.langnav 
 		{
@@ -143,10 +143,8 @@
 					<div class="col l4 offset-l2 s12">
 						<h5 class="white-text">Links</h5>
 						<ul>
-							<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-							<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-							<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-							<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+							<li><a class="grey-text text-lighten-3" href="/about">About us</a></li>
+							<li><a class="grey-text text-lighten-3" href="/contact">Contact us</a></li>
 						</ul>
 					</div>
 				</div>
@@ -159,7 +157,7 @@
 			</div>
 		</footer>
 
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script type="text/javascript">
 			@yield('js')

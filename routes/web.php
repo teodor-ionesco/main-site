@@ -1,9 +1,7 @@
 <?php
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/', 'Index@index');
+Route::get('/contact', 'Contact@index');
 //Auth::routes();
 
 /*

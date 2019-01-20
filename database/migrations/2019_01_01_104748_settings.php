@@ -14,8 +14,8 @@ class Settings extends Migration
     public function up()
     {
         Schema::create('settings', function(Blueprint $table) {
-            $table -> string('variable');
-            $table -> string('value');
+            $table -> string('variable', 191);
+            $table -> text('value');
             $table -> timestamps();
         });
     }

@@ -19,7 +19,8 @@
 @endsection
 @section('main')
 	<div class="container">
-		<h3>Modify contact email</h3>
+		<h4>Modify contact email</h4>
+		<br>
 		<form method="POST">
 			{{ csrf_field() }}
 			<input type="text" hidden name="_method" value="PATCH">
@@ -27,13 +28,31 @@
 				<div class="col" title="Emails to which the requests from the main site will be sent.">
 					Contact emails: 
 				</div>
-				<div class="col">
-					<div class="_e" _e="0">
-						<input required="" type="email" name="email[0]" placeholder="E-mail address" class="inline">
-						<div class="btn red waves-effect _deleleme">-</div>
+					<div class="col" id="_erealm" style="position: relative; bottom: 20px;">
+						@if(empty($CONTACT))
+							<div class="_e" _e="0">
+								<div class="inline">
+									<input required="" type="email" name="email[0]" placeholder="E-mail address" class="inline">
+								</div>
+								<div class="inline btn red waves-effect" _e="0" onclick="del(this);">-</div>
+							</div>
+						@else
+							@foreach($CONTACT as $key => $object)
+								<div class="_e" _e="{{ $key }}">
+									<div class="inline">
+										<input value="{{ $object }}" required="" type="email" name="email[{{ $key }}]" placeholder="E-mail address" class="inline">
+									</div>
+									<div class="inline btn red waves-effect" _e="{{ $key }}" onclick="del(this);">-</div>
+								</div>
+							@endforeach
+						@endif
 					</div>
+				<div class="col" style="position: relative; bottom: 13px;">
+					<div class="btn blue waves-effect" onclick="add();">+</div>				
 				</div>
-				<div class="btn blue waves-effect _addeleme">+</div>
+				<div class="col" style="position: relative; bottom: 13px;">
+					<button type="submit" class="btn blue waves-effect">Update</button>
+				</div>
 			</div>
 		</form>
 	</div>
@@ -41,32 +60,32 @@
 @section('js')
 // <script type="text/javascript">
 
+	var gRealm = {{ count($CONTACT) }};
+
 	/* Autoload stuff */
 	$(document).ready(function(){
 
 	});
 
 	/* Delete input email element */
-	$('._deleleme').each(function(id, elem) 
-	{
-		$(elem).click(function(el) 
-		{
-			$(el).parent().remove();
-		});
-	});
+	function del(elem) {
+		$("div[_e="+$(elem).attr('_e')+"]").remove();
+	}
 
 	/* Add input email element */
-	$('._addeleme').each(function(id, elem) 
-	{
-		$(elem).click(function(el)
-		{
-			var last = $('._e').last().attr('_e');
-			var data = '<div class="_e" _e="'+ parseInt(last+1) +'"> \
-							<input required="" type="email" name="email['+ parseInt(last+1) +']" placeholder="E-mail address" class="inline"> \
-							<div class="btn red waves-effect _deleleme">-</div> \
-						</div>';
-			$(el).before(data);
-		});
-	});
+	function add() {
+		$('#_erealm').html(
+			$('#_erealm').html() +
+
+			'<div class="_e" _e='+gRealm+'>\
+				<div class="inline">\
+					<input required="" type="email" name="email['+gRealm+']" placeholder="E-mail address" class="inline">\
+				</div>\
+				<div class="inline btn red waves-effect" _e="'+gRealm+'" onclick="del(this);">-</div>\
+			</div>'
+		);
+
+		gRealm++ ;
+	}
 // </script>	
 @endsection

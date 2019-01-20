@@ -22,7 +22,7 @@ class Contact extends Controller
 	public function index()
 	{
 		return view('admin.contact', [
-			'CONTACT' => json_decode(MSettings::where('variable', 'contact') -> first()),
+			'CONTACT' => json_decode(MSettings::where('variable', 'contact') -> first() -> value),
 			'MESSAGE' => $this -> Bridge['MESSAGE'],
 		]);
 	}

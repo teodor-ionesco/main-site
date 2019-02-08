@@ -2,6 +2,7 @@
 
 Route::get('/', 'Index@index');
 Route::get('/contact', 'Contact@index');
+Route::post('/contact', 'Contact@create');
 //Auth::routes();
 
 /*

@@ -16,7 +16,7 @@ class CheckRegKey
      */
     public function handle($request, Closure $next)
     {
-        if(empty($_GET['key']) || $_GET['key'] !== MSettings::where('variable', 'regkey') -> first() -> value)
+        if(empty($_GET['key']) || $_GET['key'] !== MSettings::where('name', 'regkey') -> first() -> value)
             return abort(404);
         else
             return $next($request);

@@ -160,6 +160,15 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script type="text/javascript">
+			@if(!empty($_GET['toast']))
+				M.toast({html: '{{ $_GET["toast"] }}'});
+			@endif
+			
+			@if(!empty($TOAST))
+				M.toast({html: '{{ $TOAST }}'});
+			@endif			
+		</script>
+		<script type="text/javascript">
 			@yield('js')
 		</script>
 	</body>

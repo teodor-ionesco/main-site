@@ -17,13 +17,19 @@ class Settings extends Migration
         Schema::create('settings', function(Blueprint $table) {
             $table -> string('name', 191);
             $table -> text('value');
-            $table -> timestamps();
         });
 
         /* Create default global settings */
         MSettings::insert([
-            'name' => 'regkey',
-            'value' => '1234567890',
+            [
+                'name' => 'regkey',
+                'value' => '1234567890',
+            ],
+            [
+                'name' => 'contact',
+                'value' => '{}',
+            ],
+
         ]);
     }
 

@@ -60,11 +60,14 @@
 @section('js')
 // <script type="text/javascript">
 
-	var gRealm = {{ count($CONTACT) }};
+	@if(empty($CONTACT))
+		var gRealm = 0;	
+	@else
+		var gRealm = {{ count($CONTACT) }};
+	@endif
 
 	/* Autoload stuff */
 	$(document).ready(function(){
-
 	});
 
 	/* Delete input email element */
@@ -74,10 +77,8 @@
 
 	/* Add input email element */
 	function add() {
-		$('#_erealm').html(
-			$('#_erealm').html() +
-
-			'<div class="_e" _e='+gRealm+'>\
+		$('#_erealm').append(
+			'<div class="_e" _e="'+gRealm+'">\
 				<div class="inline">\
 					<input required="" type="email" name="email['+gRealm+']" placeholder="E-mail address" class="inline">\
 				</div>\
@@ -87,5 +88,6 @@
 
 		gRealm++ ;
 	}
+
 // </script>	
 @endsection

@@ -29,4 +29,8 @@ Route::prefix('/admin') -> middleware('auth') -> group(function()
 		Route::get('/', 'Admin\Contact@index');
 		Route::patch('/', 'Admin\Contact@update');
 	});
+
+	Route::get('/enquiries', 'Admin\Enquiries@index');
+	Route::get('/enquiries/{id}', 'Admin\Enquiries@read');
 });
+

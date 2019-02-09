@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Enquiries;
+use App\Enquiries as MEnquiries;
+use App\Settings as MSettings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -39,14 +40,22 @@ class Contact extends Controller
             return redirect() -> back() -> withErrors($validator) -> withInput($request -> input());
 
         /* Insert the data into database */
-        Enquiries::insert([
+        MEnquiries::insert([
             'name' => $request -> input('name'),
             'email' => $request -> input('email'),
             'tel' => $request -> input('tel'),
             'enquiry' => $request -> input('enquiry'),
         ]);
 
+        /* Send an email to all contact emails regarding enquiry */
+        $emails = json_decode(MSettings::select('value') -> where('name', 'contact') -> first() -> value, true); 
+        $message = 'You have a new enquiry. Please access it here: <a href="http://'. $_SERVER['SERVER_NAME'] .'/admin/enquiries/'.MEnquiries::select('id') -> orderBy('id', 'desc') -> first() -> id.'"></a>';
+        $headers = "From: no-reply@" . $_SERVER['SERVER_NAME'] . "\r\n";
+
+        foreach($emails as $mail)
+            mail($mail, '[WEB SOLUTIONS] Contact Enquiry', $message, $headers);
+
         /* Return to /contact with proper toast */
-    	return redirect('/contact?toast=Enquiry sent with success!');
+        return redirect('/contact?toast=Enquiry sent with success!');
     }
 }

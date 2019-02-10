@@ -17,6 +17,7 @@
 				  <a href="/admin/dashboard" class="brand-logo">Dashboard</a>
 				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				  <ul class="right hide-on-med-and-down">
+				    <li><a href="/admin/regkey">RegKey</a></li>
 				    <li><a href="/admin/contact">Contact</a></li>
 				    <li><a href="/admin/enquiries">Enquiries</a></li>
 				     <li><a href="/a/logout">Logout</a></li>
@@ -25,6 +26,7 @@
 			</nav>
 
 			<ul class="sidenav" id="mobile-demo">
+				<li><a href="/admin/regkey">RegKey</a></li>
 				<li><a href="/admin/contact">Contact</a></li>
 				<li><a href="/admin/enquiries">Enquiries</a></li>				
 				<li><a href="/a/logout">Logout</a></li>
@@ -43,6 +45,14 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script type="text/javascript">
+			@if(!empty($TOAST))
+				M.toast({html: '{{ $TOAST }}'});
+			@endif
+
+			@if(!empty($_GET['toast']))
+				M.toast({html: '{{ $_GET['toast'] }}'});
+			@endif
+
 			$(document).ready(function(){
 				$('.sidenav').sidenav();
 			});

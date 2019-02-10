@@ -3,6 +3,8 @@
 Route::get('/', 'Index@index');
 Route::get('/contact', 'Contact@index');
 Route::post('/contact', 'Contact@create');
+Route::get('/privacy', 'Privacy@index');
+Route::get('/about', 'About@index');
 //Auth::routes();
 
 /*
@@ -24,10 +26,14 @@ Route::prefix('/admin') -> middleware('auth') -> group(function()
 	Route::get('/', 'Admin\Index@index');
 	Route::get('/dashboard', 'Admin\Dashboard@index');
 
-	Route::prefix('contact') -> group(function()
-	{
+	Route::prefix('contact') -> group(function() {
 		Route::get('/', 'Admin\Contact@index');
 		Route::patch('/', 'Admin\Contact@update');
+	});
+
+	Route::prefix('regkey') -> group(function() {
+		Route::get('/', 'Admin\RegKey@index');
+		Route::post('/', 'Admin\RegKey@update');
 	});
 
 	Route::get('/enquiries', 'Admin\Enquiries@index');

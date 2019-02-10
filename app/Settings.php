@@ -8,4 +8,7 @@ class Settings extends Model
 {
 	/* Set target table */
     protected $table = 'settings';
+	
+	/* No timestamps */
+	public $timestamps = false;
 }

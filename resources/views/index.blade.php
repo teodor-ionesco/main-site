@@ -4,7 +4,8 @@
 
 	main 
 	{
-		margin: 50px;
+		margin-top: 25px;
+		margin-bottom: 50px;
 	}
 
 	main div
@@ -25,7 +26,7 @@
 	}
 
 @endsection
-@section('title') Index @endsection
+@section('title') SubDev - Reliable, Fast, Cheap Web Development Solutions! @endsection
 @section('header')
 	<!--- header cover desktop--->
 	<div class="blue darken-3 cover-desktop hide-on-small-only z-depth-2">
@@ -90,14 +91,16 @@
 @section('main')
 
 	<div class="container ">
-		<div class="flow-text center">Are you looking for dedicated web developers to satisfy your business needs?</div>
-		<div class="flow-text center" style="margin-bottom: 25px;">You're at the right place!</div>
+		<div style="margin-top: 40px; margin-bottom: 70px;">
+			<div class="center" style="font-size: 30px;">Are you looking for dedicated web developers?</div>
+			<div class="center" style="font-size: 30px;">You're at the right place!</div>
+		</div>
 
-		<div class="divider hide-on-small-only" style="margin-bottom: 25px;"></div>
+		<div class="divider hide-on-small-only" style="margin-bottom: 25px; margin-top: 10px;"></div>
 
 		<div class="row" style="margin-top: -37px;">
 			<div class="col s12 m12 l6">
-				<h2>Reliable products</h2>
+				<h2>Reliable Products</h2>
 				<div class="flow-text">
 					Our company provides scalable services which 
 					empower your business to grow naturally. This unlocks the capability
@@ -116,28 +119,50 @@
 
 		<div style="margin: 60px;" class="hide-on-med-and-down"></div>
 
-		<div class="row" style="">
-			<div class="col s12 m12 l6 right">
-				<h2>Reliable products</h2>
+		<div class="row" style="margin-top: -37px;">
+			<div class="col s12 m12 l6">
+				<h2>Fast Delivery</h2>
 				<div class="flow-text">
-					Our company provides scalable services which 
-					empower your business to grow naturally. This unlocks the capability
-					of adding more complex features, attracting more customers and helping your
-					employees manage your services in a professional manner.
+					A fast delivery of a web application is a must nowadays, especially on marketing field.
+					Therefore we are putting a lot of effort into completing each and every feature that you
+					require before the deadline is even over. This guarantees that you 
+					will not have to wait for us to finish our job in order to carry on with your company.
 				</div>				
 			</div>
 
 			<div class="col s12 m0 l6">
-				<img src="/images/img1.jpg" class="right hide-on-med-and-down hoverable z-index-4" width="350" style="position:relative; top:111px;">
+				<img src="/images/img1.jpg" class="hide-on-med-and-down hoverable z-index-4" width="350" style="position:relative; top:111px;">
 				<div class="hide-on-large-only" style="text-align:center; margin-top: 15px;">
 					<img src="/images/img1.jpg" class="responsive-img hoverable z-index-4" width="350" style="position: relative; ">
 				</div>
 			</div>
 		</div>
+
+		<div style="margin: 60px;" class="hide-on-med-and-down"></div>
+
+		<div class="row" style="margin-top: -37px;">
+			<div class="col s12 m12 l6">
+				<h2>Cheap Price</h2>
+				<div class="flow-text">
+					Our company provides you numberless services at a very cheap price. The workflow we approach is the agile development which ensures you that you won't end up spending money on products which in the end you do not
+					desire.
+				</div>				
+			</div>
+
+			<div class="col s12 m0 l6">
+				<img src="/images/img1.jpg" class="hide-on-med-and-down hoverable z-index-4" width="350" style="position:relative; top:111px;">
+				<div class="hide-on-large-only" style="text-align:center; margin-top: 15px;">
+					<img src="/images/img1.jpg" class="responsive-img hoverable z-index-4" width="350" style="position: relative; ">
+				</div>
+			</div>
+		</div>
+
+		<div class="divider hide-on-small-only" style="margin-top: 35px;"></div>
+
+		<h2 class="center">
+			Really, why us?
+		</h2>
 	</div>
-	
-
-
 		<!--- real navbar 
 		<nav class="blue darken-3">
 			<div class="nav-wrapper">

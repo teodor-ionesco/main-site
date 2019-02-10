@@ -66,7 +66,7 @@
 			display: flex;
 			min-height: 100vh;
 			flex-direction: column;
-			background-image: url('/images/abstract.jpg');
+			/*background-image: url('/images/abstract2.jpg'); */
 			
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -137,11 +137,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
-						<h5 class="white-text">Footer Content</h5>
-						<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+						<h5 class="white-text">Web Development Solutions</h5>
+						<p class="grey-text text-lighten-4">We are serving our happy customers ever since 2018. More references can be found inline.</p>
 					</div>
 					<div class="col l4 offset-l2 s12">
-						<h5 class="white-text">Links</h5>
+						<h5 class="white-text">References</h5>
 						<ul>
 							<li><a class="grey-text text-lighten-3" href="/about">About us</a></li>
 							<li><a class="grey-text text-lighten-3" href="/privacy">Privacy Policy</a></li>
@@ -152,8 +152,8 @@
 			</div>
 			<div class="footer-copyright blue darken-4">
 				<div class="container">
-					© 2014 Copyright Text
-					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+					© 2018 <a href="/" style="color: #cad6ea">SubDev</a>
+					<a class="grey-text text-lighten-4 right" href="#!" id="goToTop">Go to Top</a>
 				</div>
 			</div>
 		</footer>
@@ -167,7 +167,11 @@
 			
 			@if(!empty($TOAST))
 				M.toast({html: '{{ $TOAST }}'});
-			@endif			
+			@endif		
+
+			$('#goToTop').click(function(){
+				$('html').animate({scrollTop: 0}, 1000);
+			});
 		</script>
 		<script type="text/javascript">
 			@yield('js')
